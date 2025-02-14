@@ -2,9 +2,9 @@ from eth_account import Account
 from web3 import Web3
 import time
 
-num_keys = 10000  # Set the number of key pairs you wanted to generate !
+num_keys = 30  # Set the number of key pairs you wanted to generate !
 
-with open("pk.txt", "w") as priv_file, open("ad.txt", "w") as pub_file:
+with open("pk.txt", "a") as priv_file, open("ad.txt", "a") as pub_file:
     for _ in range(num_keys):
         private_key = Account.create()._private_key.hex()
         address = Account.from_key(private_key).address
